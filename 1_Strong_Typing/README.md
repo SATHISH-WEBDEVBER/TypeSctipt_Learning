@@ -65,11 +65,18 @@ number datatype கொண்ட variable-க்கு string value assign செ
 
 ---
 
--
+## JavaScript vs TypeScript
+
+| Feature               | JavaScript | TypeScript       |
+| --------------------- | ---------- | ---------------- |
+| Datatype Enforcement  | No         | Yes              |
+| Type Safety           | Low        | High             |
+| Compile-Time Checking | No         | Yes              |
+| Error Detection       | Runtime    | Development Time |
+
+---
 
 ## Real-World Example | நடைமுறை உதாரணம்
-
-### English
 
 Consider an employee's salary:
 
@@ -85,7 +92,7 @@ salary = "Fifty Thousand";
 
 TypeScript prevents this mistake before the application runs.
 
-### தமிழ்
+
 
 ஒரு ஊழியரின் சம்பளத்தை எடுத்துக்கொள்ளலாம்:
 
@@ -112,18 +119,6 @@ salary = "Fifty Thousand";
 | Easier maintenance         | பராமரிக்க எளிதாகிறது            |
 | Better IDE support         | IDE உதவி சிறப்பாக கிடைக்கும் |
 | Reduces runtime errors     | Runtime errors குறைகின்றன                |
-
----
-
-## Interview Question
-
-### What is Strong Typing?
-
-Strong Typing is a programming concept where variables must strictly follow their declared datatype, and incompatible assignments result in an error.
-
-### Strong Typing என்றால் என்ன?
-
-ஒரு variable தனது datatype-ஐ கட்டாயமாக பின்பற்ற வேண்டும். பொருந்தாத datatype assign செய்தால் error உருவாகும். இதுவே Strong Typing ஆகும்.
 
 ---
 
