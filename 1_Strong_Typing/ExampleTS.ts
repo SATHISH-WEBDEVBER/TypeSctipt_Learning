@@ -1,17 +1,23 @@
-// Strong Typing Example - TypeScript
-
-// Creating a variable with an explicit number datatype.
+// Creating a variable with a strict number datatype.
 // number datatype-உடன் variable உருவாக்கப்படுகிறது.
-var age: number = 25;
+var score: number = 100;
+console.log("Type:", typeof score);
+// Expected Output: Type: number
+// எதிர்பார்க்கப்படும் வெளியீடு: Type: number
 
-// Display the current value.
-// தற்போதைய மதிப்பை காட்டுகிறது.
-console.log(age);
+// TypeScript prevents assigning a string value to a number variable.
+// number variable-க்கு string value-ஐ assign செய்ய TypeScript அனுமதிக்காது.
+// score = "One Hundred";
 
-// TypeScript prevents assigning a string to a number variable.
-// number variable-க்கு string value assign செய்ய TypeScript அனுமதிக்காது.
+// Extra: TypeScript enforces parameter types in functions to prevent calculation bugs.
+// கூடுதல்: கணக்கீட்டு பிழைகளைத் தடுக்க TypeScript function-களில் parameter types-ஐ கட்டாயப்படுத்துகிறது.
+function addBonus(score: number, bonus: number): number {
+    return score + bonus;
+}
+console.log("Result:", addBonus(100, 50));
+// Expected Output: Result: 150
+// எதிர்பார்க்கப்படும் வெளியீடு: Result: 150
 
-// age = "Twenty Five";
-
-// Uncommenting the above line will produce a type error.
-// மேலுள்ள வரியை uncomment செய்தால் type error வரும்.
+// Attempting to pass a string will cause a compilation error.
+// string-ஐ அனுப்ப முயற்சித்தால் compilation error ஏற்படும்.
+// console.log(addBonus(100, "50"));
