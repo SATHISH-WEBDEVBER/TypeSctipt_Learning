@@ -1,39 +1,39 @@
-// Beginner: TypeScript enforces the declared datatype of a variable.
-// பிகினர்: TypeScript-ல் variable-க்கு குறிக்கப்பட்ட datatype-ஐ மட்டுமே பயன்படுத்த முடியும்.
+// TypeScript labels the box so it only accepts numbers.
+// TypeScript பெட்டியை லேபிளிடுவதால் அது எண்களை மட்டுமே ஏற்கும்.
 var age: number = 25;
-console.log("Type of age:", typeof age);
-// Expected Output: Type of age: number
-// எதிர்பார்க்கப்படும் வெளியீடு: Type of age: number
+console.log("Age:", age);
+// Expected Output: Age: 25
+// எதிர்பார்க்கப்படும் வெளியீடு: Age: 25
 
-// Attempting to reassign a string will cause a compilation error.
-// string-ஐ assign செய்ய முயற்சித்தால் compilation error ஏற்படும்.
+// Attempting to store a string value in a number box causes an error.
+// number பெட்டியில் string மதிப்பைச் சேமிக்க முயன்றால் பிழை ஏற்படும்.
 // age = "Twenty Five";
 
-// Intermediate: TypeScript enforces function parameter datatypes to avoid calculation bugs.
-// இன்டர்மீடியட்: கணக்கீட்டு பிழைகளைத் தடுக்க function parameters-ன் datatypes-ஐ TypeScript கட்டாயப்படுத்துகிறது.
+// The function machine is configured to strictly accept only number inputs.
+// function இயந்திரம் எண்களை மட்டுமே ஏற்கும் வகையில் அமைக்கப்பட்டுள்ளது.
 function calculateTotal(price: number, quantity: number): number {
     return price * quantity;
 }
-console.log("Result with correct types:", calculateTotal(10, 5));
-// Expected Output: Result with correct types: 50
-// எதிர்பார்க்கப்படும் வெளியீடு: Result with correct types: 50
+console.log("Total:", calculateTotal(10, 5));
+// Expected Output: Total: 50
+// எதிர்பார்க்கப்படும் வெளியீடு: Total: 50
 
-// Passing incorrect types will cause a compilation error.
-// தவறான types-ஐ அனுப்ப முயற்சித்தால் compilation error ஏற்படும்.
+// Passing text will be blocked during compilation, preventing bugs.
+// உரையை அனுப்ப முயற்சித்தால் கம்பைல் நேரத்திலேயே தடுக்கப்பட்டு பிழைகள் தவிர்க்கப்படும்.
 // console.log(calculateTotal("ten", 5));
 
-// Advanced: TypeScript enforces strict object structures, preventing spelling mistakes and missing properties.
-// அட்வான்ஸ்டு: எழுத்துப்பிழைகள் மற்றும் விடுபட்ட பண்புகளைத் தடுக்க strict object அமைப்பை TypeScript கட்டாயப்படுத்துகிறது.
-interface User {
+// An interface acts as a template for the student ID card.
+// ஒரு interface மாணவர் அடையாள அட்டைக்கான மாதிரியாக செயல்படுகிறது.
+interface Student {
     id: number;
     name: string;
 }
 
-var user: User = {
+var student: Student = {
     id: 101,
     name: "Sathish"
 };
 
-// Accessing misspelled properties or adding undefined properties causes a compilation error.
-// எழுத்துப்பிழை கொண்ட அல்லது வரையறுக்கப்படாத property-ஐ அணுகும்போது compilation error ஏற்படும்.
-// console.log("User email:", user.emial);
+// Accessing properties not defined in the template causes an error.
+// மாதிரியில் இல்லாத பண்புகளை அணுக முயற்சித்தால் பிழை ஏற்படும்.
+// console.log(student.rollNum);
