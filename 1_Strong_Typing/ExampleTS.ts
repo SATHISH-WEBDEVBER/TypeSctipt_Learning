@@ -1,23 +1,39 @@
-// Creating a variable with a strict number datatype.
-// number datatype-உடன் variable உருவாக்கப்படுகிறது.
-var score: number = 100;
-console.log("Type:", typeof score);
-// Expected Output: Type: number
-// எதிர்பார்க்கப்படும் வெளியீடு: Type: number
+// Beginner: TypeScript enforces the declared datatype of a variable.
+// பிகினர்: TypeScript-ல் variable-க்கு குறிக்கப்பட்ட datatype-ஐ மட்டுமே பயன்படுத்த முடியும்.
+var age: number = 25;
+console.log("Type of age:", typeof age);
+// Expected Output: Type of age: number
+// எதிர்பார்க்கப்படும் வெளியீடு: Type of age: number
 
-// TypeScript prevents assigning a string value to a number variable.
-// number variable-க்கு string value-ஐ assign செய்ய TypeScript அனுமதிக்காது.
-// score = "One Hundred";
+// Attempting to reassign a string will cause a compilation error.
+// string-ஐ assign செய்ய முயற்சித்தால் compilation error ஏற்படும்.
+// age = "Twenty Five";
 
-// Extra: TypeScript enforces parameter types in functions to prevent calculation bugs.
-// கூடுதல்: கணக்கீட்டு பிழைகளைத் தடுக்க TypeScript function-களில் parameter types-ஐ கட்டாயப்படுத்துகிறது.
-function addBonus(score: number, bonus: number): number {
-    return score + bonus;
+// Intermediate: TypeScript enforces function parameter datatypes to avoid calculation bugs.
+// இன்டர்மீடியட்: கணக்கீட்டு பிழைகளைத் தடுக்க function parameters-ன் datatypes-ஐ TypeScript கட்டாயப்படுத்துகிறது.
+function calculateTotal(price: number, quantity: number): number {
+    return price * quantity;
 }
-console.log("Result:", addBonus(100, 50));
-// Expected Output: Result: 150
-// எதிர்பார்க்கப்படும் வெளியீடு: Result: 150
+console.log("Result with correct types:", calculateTotal(10, 5));
+// Expected Output: Result with correct types: 50
+// எதிர்பார்க்கப்படும் வெளியீடு: Result with correct types: 50
 
-// Attempting to pass a string will cause a compilation error.
-// string-ஐ அனுப்ப முயற்சித்தால் compilation error ஏற்படும்.
-// console.log(addBonus(100, "50"));
+// Passing incorrect types will cause a compilation error.
+// தவறான types-ஐ அனுப்ப முயற்சித்தால் compilation error ஏற்படும்.
+// console.log(calculateTotal("ten", 5));
+
+// Advanced: TypeScript enforces strict object structures, preventing spelling mistakes and missing properties.
+// அட்வான்ஸ்டு: எழுத்துப்பிழைகள் மற்றும் விடுபட்ட பண்புகளைத் தடுக்க strict object அமைப்பை TypeScript கட்டாயப்படுத்துகிறது.
+interface User {
+    id: number;
+    name: string;
+}
+
+var user: User = {
+    id: 101,
+    name: "Sathish"
+};
+
+// Accessing misspelled properties or adding undefined properties causes a compilation error.
+// எழுத்துப்பிழை கொண்ட அல்லது வரையறுக்கப்படாத property-ஐ அணுகும்போது compilation error ஏற்படும்.
+// console.log("User email:", user.emial);

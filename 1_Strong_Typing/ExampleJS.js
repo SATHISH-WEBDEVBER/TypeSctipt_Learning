@@ -1,22 +1,36 @@
-// Creating a variable with a number value.
-// number மதிப்புடன் ஒரு variable உருவாக்கப்படுகிறது.
-var score = 100;
-console.log("Type:", typeof score);
-// Expected Output: Type: number
-// எதிர்பார்க்கப்படும் வெளியீடு: Type: number
+// Beginner: JavaScript allows variables to change types dynamically.
+// பிகினர்: JavaScript-ல் variable-ன் datatypes-ஐ எளிதாக மாற்றிக்கொள்ளலாம்.
+var age = 25;
+console.log("Type of age:", typeof age);
+// Expected Output: Type of age: number
+// எதிர்பார்க்கப்படும் வெளியீடு: Type of age: number
 
-// JavaScript allows dynamically changing the datatype.
-// JavaScript-ல் variable-ன் datatype-ஐ எளிதாக மாற்ற முடியும்.
-score = "One Hundred";
-console.log("New Type:", typeof score);
-// Expected Output: New Type: string
-// எதிர்பார்க்கப்படும் வெளியீடு: New Type: string
+age = "Twenty Five";
+console.log("Type of age after change:", typeof age);
+// Expected Output: Type of age after change: string
+// எதிர்பார்க்கப்படும் வெளியீடு: Type of age after change: string
 
-// Extra: JavaScript allows mixed types in calculations, causing unexpected results.
-// கூடுதல்: JavaScript கணக்கீடுகளில் வெவ்வேறு types-ஐ அனுமதிப்பதால் எதிர்பாராத முடிவுகள் ஏற்படும்.
-function addBonus(score, bonus) {
-    return score + bonus;
+// Intermediate: Functions in JavaScript accept any datatype, causing unexpected outputs.
+// இன்டர்மீடியட்: JavaScript function-கள் எந்த datatype-ஐயும் ஏற்கும், இதனால் எதிர்பாராத விடைகள் வரலாம்.
+function calculateTotal(price, quantity) {
+    return price * quantity;
 }
-console.log("Result:", addBonus(100, "50"));
-// Expected Output: Result: 10050
-// எதிர்பார்க்கப்படும் வெளியீடு: Result: 10050
+console.log("Result with correct types:", calculateTotal(10, 5));
+// Expected Output: Result with correct types: 50
+// எதிர்பார்க்கப்படும் வெளியீடு: Result with correct types: 50
+
+console.log("Result with incorrect types:", calculateTotal("ten", 5));
+// Expected Output: Result with incorrect types: NaN
+// எதிர்பார்க்கப்படும் வெளியீடு: Result with incorrect types: NaN
+
+// Advanced: JavaScript allows adding or changing object properties without structure enforcement.
+// அட்வான்ஸ்டு: JavaScript-ல் object அமைப்பை கட்டுப்படுத்தாமல் புதிய பண்புகளைச் சேர்க்கவோ மாற்றவோ முடியும்.
+var user = {
+    id: 101,
+    name: "Sathish"
+};
+// Accessing a misspelled property returns undefined without warning.
+// எழுத்துப்பிழை கொண்ட property-ஐ அணுகும்போது warning இன்றி undefined கிடைக்கும்.
+console.log("User email:", user.emial);
+// Expected Output: User email: undefined
+// எதிர்பார்க்கப்படும் வெளியீடு: User email: undefined

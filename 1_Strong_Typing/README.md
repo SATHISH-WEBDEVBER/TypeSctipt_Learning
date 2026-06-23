@@ -2,103 +2,112 @@
 
 ## Definition | வரையறை
 
-Strong Typing means a variable must follow the datatype assigned to it. Assigning a value of a different datatype will result in an error.
+Strong Typing means that variables are bound to specific datatypes. Once a variable is declared with a type, it cannot hold values of other datatypes, and any mismatch is caught as an error.
 
-Strong Typing என்பது ஒரு variable-க்கு கொடுக்கப்பட்ட datatype-ஐ அது தொடர்ந்து பின்பற்ற வேண்டும் என்பதாகும். வேறு datatype value கொடுத்தால் error ஏற்படும்.
+Strong Typing என்பது variables குறிப்பிட்ட datatypes-உடன் பிணைக்கப்படுவதைக் குறிக்கிறது. ஒரு variable ஒரு குறிப்பிட்ட வகைக்காக உருவாக்கப்பட்டால், அதில் வேறு வகை மதிப்புகளைச் சேமிக்க முடியாது. அவ்வாறு செய்தால் error ஏற்படும்.
 
 ---
 
 ## Why It Matters | ஏன் இது முக்கியம்?
 
-Strong Typing helps catch datatype-related mistakes during development, making applications more reliable and easier to maintain.
+In large applications, dynamic typing leads to silent runtime errors (like NaN or undefined) that are difficult to trace. Strong Typing catches these errors instantly during development, making the code self-documenting and highly reliable.
 
-Strong Typing, datatype தொடர்பான தவறுகளை development நேரத்திலேயே கண்டறிந்து application-ஐ நம்பகமானதாகவும் பராமரிக்க எளிதாகவும் மாற்றுகிறது.
+பெரிய அளவிலான applications-ல், dynamic typing மூலமாக கணிக்க முடியாத runtime பிழைகள் (NaN அல்லது undefined போன்றவை) ஏற்படும். Strong Typing இவற்றை development நேரத்திலேயே கண்டறிந்து குறியீட்டை நம்பகமானதாக மாற்றுகிறது.
 
 ---
 
 ## JavaScript Example
 
 ```javascript
-// Creating a variable with a number value.
-// number மதிப்புடன் ஒரு variable உருவாக்கப்படுகிறது.
-var score = 100;
-console.log("Type:", typeof score);
-// Expected Output: Type: number
-// எதிர்பார்க்கப்படும் வெளியீடு: Type: number
+// Beginner: JavaScript allows variables to change types dynamically.
+// பிகினர்: JavaScript-ல் variable-ன் datatypes-ஐ எளிதாக மாற்றிக்கொள்ளலாம்.
+var age = 25;
+console.log("Type of age:", typeof age);
+// Expected Output: Type of age: number
+// எதிர்பார்க்கப்படும் வெளியீடு: Type of age: number
 
-// JavaScript allows dynamically changing the datatype.
-// JavaScript-ல் variable-ன் datatype-ஐ எளிதாக மாற்ற முடியும்.
-score = "One Hundred";
-console.log("New Type:", typeof score);
-// Expected Output: New Type: string
-// எதிர்பார்க்கப்படும் வெளியீடு: New Type: string
+age = "Twenty Five";
+console.log("Type of age after change:", typeof age);
+// Expected Output: Type of age after change: string
+// எதிர்பார்க்கப்படும் வெளியீடு: Type of age after change: string
 
-// Extra: JavaScript allows mixed types in calculations, causing unexpected results.
-// கூடுதல்: JavaScript கணக்கீடுகளில் வெவ்வேறு types-ஐ அனுமதிப்பதால் எதிர்பாராத முடிவுகள் ஏற்படும்.
-function addBonus(score, bonus) {
-    return score + bonus;
+// Intermediate: Functions in JavaScript accept any datatype, causing unexpected outputs.
+// இன்டர்மீடியட்: JavaScript function-கள் எந்த datatype-ஐயும் ஏற்கும், இதனால் எதிர்பாராத விடைகள் வரலாம்.
+function calculateTotal(price, quantity) {
+    return price * quantity;
 }
-console.log("Result:", addBonus(100, "50"));
-// Expected Output: Result: 10050
-// எதிர்பார்க்கப்படும் வெளியீடு: Result: 10050
+console.log("Result with correct types:", calculateTotal(10, 5));
+// Expected Output: Result with correct types: 50
+// எதிர்பார்க்கப்படும் வெளியீடு: Result with correct types: 50
+
+console.log("Result with incorrect types:", calculateTotal("ten", 5));
+// Expected Output: Result with incorrect types: NaN
+// எதிர்பார்க்கப்படும் வெளியீடு: Result with incorrect types: NaN
+
+// Advanced: JavaScript allows adding or changing object properties without structure enforcement.
+// அட்வான்ஸ்டு: JavaScript-ல் object அமைப்பை கட்டுப்படுத்தாமல் புதிய பண்புகளைச் சேர்க்கவோ மாற்றவோ முடியும்.
+var user = {
+    id: 101,
+    name: "Sathish"
+};
+// Accessing a misspelled property returns undefined without warning.
+// எழுத்துப்பிழை கொண்ட property-ஐ அணுகும்போது warning இன்றி undefined கிடைக்கும்.
+console.log("User email:", user.emial);
+// Expected Output: User email: undefined
+// எதிர்பார்க்கப்படும் வெளியீடு: User email: undefined
 ```
 
 ### Output
 
 ```text
-Type: number
-New Type: string
-Result: 10050
+Type of age: number
+Type of age after change: string
+Result with correct types: 50
+Result with incorrect types: NaN
+User email: undefined
 ```
 
 ### Observation
 
-JavaScript allows changing a variable's datatype at runtime and performing mixed-type operations, which can lead to calculation bugs (like string concatenation instead of addition).
+JavaScript allows dynamic changes to variables, calculation with incompatible datatypes, and accessing undeclared properties, leading to unexpected behaviors (NaN, undefined) at runtime without warning.
 
-JavaScript ஒரு variable-ன் datatype-ஐ runtime-ல் மாற்றவும், வெவ்வேறு types கொண்டு கணக்கீடு செய்யவும் அனுமதிக்கிறது. இது பிழையான முடிவுகளுக்கு வழிவகுக்கும் (கூட்டலுக்குப் பதிலாக இணைப்பது போல).
+JavaScript-ல் variable types-ஐ மாற்றுவது, பொருந்தாத வகைகளில் கணக்கீடு செய்வது மற்றும் இல்லாத properties-ஐ அணுகுவது போன்றவற்றை runtime-ல் எந்த எச்சரிக்கையுமின்றி அனுமதிக்கிறது.
 
 ---
 
 ## TypeScript Example
 
 ```typescript
-// Creating a variable with a strict number datatype.
-// number datatype-உடன் variable உருவாக்கப்படுகிறது.
-var score: number = 100;
-console.log("Type:", typeof score);
-// Expected Output: Type: number
-// எதிர்பார்க்கப்படும் வெளியீடு: Type: number
+// Beginner: Enforcing variable datatypes
+var age: number = 25;
+age = "Twenty Five"; // Compile Error: Type 'string' is not assignable to type 'number'.
 
-// TypeScript prevents assigning a string value to a number variable.
-// number variable-க்கு string value-ஐ assign செய்ய TypeScript அனுமதிக்காது.
-// score = "One Hundred";
-
-// Extra: TypeScript enforces parameter types in functions to prevent calculation bugs.
-// கூடுதல்: கணக்கீட்டு பிழைகளைத் தடுக்க TypeScript function-களில் parameter types-ஐ கட்டாயப்படுத்துகிறது.
-function addBonus(score: number, bonus: number): number {
-    return score + bonus;
+// Intermediate: Enforcing function parameter datatypes
+function calculateTotal(price: number, quantity: number): number {
+    return price * quantity;
 }
-console.log("Result:", addBonus(100, 50));
-// Expected Output: Result: 150
-// எதிர்பார்க்கப்படும் வெளியீடு: Result: 150
+calculateTotal("ten", 5); // Compile Error: Argument of type 'string' is not assignable to parameter of type 'number'.
 
-// Attempting to pass a string will cause a compilation error.
-// string-ஐ அனுப்ப முயற்சித்தால் compilation error ஏற்படும்.
-// console.log(addBonus(100, "50"));
+// Advanced: Enforcing strict object shapes
+interface User {
+    id: number;
+    name: string;
+}
+var user: User = { id: 101, name: "Sathish" };
+console.log(user.emial); // Compile Error: Property 'emial' does not exist on type 'User'.
 ```
 
 ### Output
 
 ```text
-Type: number
-Result: 150
+Compilation Error: Datatype mismatches and invalid property access are blocked.
 ```
 
 ### Observation
 
-TypeScript prevents assigning incompatible datatypes and enforces strict parameter types in functions, catching calculation errors during compilation.
+TypeScript catches type mismatches, incorrect function arguments, and object spelling errors during compilation, stopping buggy code from running.
 
-பொருந்தாத datatype-களை assign செய்வதையும், function-களில் தவறான parameter types-ஐ அனுப்புவதையும் TypeScript கம்பைல் நேரத்திலேயே கண்டறிந்து தடுக்கிறது.
+TypeScript, தவறான datatype ஒதுக்கீடுகள், பொருந்தாத function arguments மற்றும் object எழுத்துப்பிழைகளை கம்பைல் நேரத்திலேயே கண்டறிந்து பிழையான குறியீடு ரன் ஆவதைத் தடுக்கிறது.
 
 ---
 
@@ -106,17 +115,18 @@ TypeScript prevents assigning incompatible datatypes and enforces strict paramet
 
 | Feature | JavaScript | TypeScript |
 | ------- | ---------- | ---------- |
-| Typing | Weakly typed (allows dynamic datatype changes) | Strongly typed (prevents dynamic datatype changes) |
-| Error Detection | Errors are detected at runtime | Datatype errors are detected during compile time |
-| Type Safety | No type safety enforcement | Strict type safety enforcement |
+| Type Checking | Checked at runtime (Dynamic) | Checked at compile time (Static) |
+| Safety Level | Low (Allows silent errors like NaN/undefined) | High (Prevents variable and object shape mismatches) |
+| Object Validation | Properties can be added or accessed freely | Strictly validates object properties and structures |
+| Function Verification | Parameter types are not validated | Validates parameter and return types strictly |
 
 ---
 
 ## Real-World Example | நடைமுறை உதாரணம்
 
-Consider an online shopping cart where the total price of items must always be a number. In JavaScript, a bug could accidentally assign a string to it, causing calculation errors. TypeScript prevents this by strictly enforcing the number type.
+Imagine a bank transaction system where the deposit amount must be a number. In JavaScript, if a user input sends a string value like "100" or text like "abc", the system might perform string concatenation (e.g., balance + "100") or produce NaN, leading to financial calculation bugs. TypeScript enforces the amount to be strictly a number, preventing these bugs before the code is deployed.
 
-ஒரு ஆன்லைன் ஷாப்பிங் கார்ட்டில் பொருட்களின் மொத்த விலை எப்போதும் number ஆக இருக்க வேண்டும். JavaScript-ல் தவறுதலாக string மதிப்பு கொடுக்கப்பட்டால் கணக்கீடுகளில் பிழை ஏற்படும். TypeScript இதனை number வகை என்று கட்டாயப்படுத்துவதன் மூலம் தடுக்கிறது.
+ஒரு வங்கி பரிவர்த்தனை முறையை கற்பனை செய்து பாருங்கள், அங்கு வைப்புத்தொகை (deposit amount) எப்போதும் number ஆக இருக்க வேண்டும். JavaScript-ல் பயனர் உள்ளீடு "100" அல்லது "abc" என்று string-ஆக வந்தால், கணினி தவறான கணக்கீட்டை (NaN அல்லது string concatenation) செய்யும். TypeScript இந்த தொகையை number-ஆக மட்டுமே இருக்க வேண்டும் என்று கட்டாயப்படுத்தி, குறியீடு வெளியிடுவதற்கு முன்பே பிழைகளைத் தடுக்கிறது.
 
 ---
 
@@ -124,19 +134,20 @@ Consider an online shopping cart where the total price of items must always be a
 
 | Benefit | Description |
 | ------- | ----------- |
-| Prevents Type Mistakes | Catches incorrect datatype assignments before running the code. |
-| Improves Code Reliability | Ensures variables hold expected values, reducing runtime crashes. |
-| Better IDE Support | Provides accurate autocompletion and inline documentation. |
+| Early Bug Detection | Mismatches and structural errors are caught during compilation. |
+| Zero Silent Errors | Prevents values like NaN and undefined from passing through undetected. |
+| Strict Object Shapes | Guarantees that objects conform to defined interfaces, avoiding typos. |
+| Enhanced Refactoring | Safe to change property names as the compiler flags all references. |
 
 ---
 
 ## Interview Question
 
-### What is Strong Typing?
+### What is the difference between Strong Typing and Weak Typing?
 
-Strong Typing is a programming concept where variables must strictly follow their declared datatype, and incompatible assignments result in a compilation error.
+Strong Typing prevents implicit conversion between incompatible datatypes (e.g., adding a string and a number requires explicit conversion). Weak Typing (like in JavaScript) allows implicit conversion and type changes at runtime, often leading to unexpected errors.
 
-ஒரு variable தனது datatype-ஐ கட்டாயமாக பின்பற்ற வேண்டும். பொருந்தாத datatype assign செய்தால் error உருவாகும். இதுவே Strong Typing ஆகும்.
+Strong Typing என்பது பொருந்தாத datatypes-க்கு இடையே தானியங்கி மாற்றங்களைத் தடுக்கிறது (உதாரணமாக, string மற்றும் number-ஐக் கூட்டும்போது வெளிப்படையான மாற்றம் தேவைப்படும்). Weak Typing (JavaScript போன்றவை) runtime-ல் தானியங்கி மாற்றங்களையும் மாறும் தன்மையையும் அனுமதிக்கிறது, இது பெரும்பாலும் எதிர்பாராத பிழைகளுக்கு வழிவகுக்கிறது.
 
 ---
 
