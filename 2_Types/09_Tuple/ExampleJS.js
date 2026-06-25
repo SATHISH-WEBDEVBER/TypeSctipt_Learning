@@ -1,18 +1,20 @@
-// Tuple Example - JavaScript
+// JavaScript does not support tuples, treating them as regular flexible arrays.
+// JavaScript-ல் tuples கிடையாது, அவை சாதாரண மற்றும் மாறக்கூடிய arrays போலவே செயல்படுகின்றன.
+var point = [12.97, 80.27];
+console.log("Point:", point);
+// Expected Output: Point: [ 12.97, 80.27 ]
+// எதிர்பார்க்கப்படும் வெளியீடு: Point: [ 12.97, 80.27 ]
 
-// JavaScript does not support tuples.
-// JavaScript-ல் tuple என்ற feature இல்லை.
+// JavaScript allows pushing extra elements, violating length requirements.
+// JavaScript கூடுதல் உறுப்புகளைச் சேர்க்க அனுமதிக்கிறது, இதனால் நீளக் கட்டுப்பாடு மீறப்படுகிறது.
+point.push("Chennai");
+console.log("Updated Point:", point);
+// Expected Output: Updated Point: [ 12.97, 80.27, 'Chennai' ]
+// எதிர்பார்க்கப்படும் வெளியீடு: Updated Point: [ 12.97, 80.27, 'Chennai' ]
 
-// Creating an array with mixed values.
-// வெவ்வேறு datatype values கொண்ட array உருவாக்கப்படுகிறது.
-var employee = [101, "Sathish", true];
-
-// Display the array.
-// array-ஐ காட்டுகிறது.
-console.log(employee);
-
-// JavaScript allows changing values freely.
-// JavaScript-ல் values-ஐ சுதந்திரமாக மாற்றலாம்.
-employee[0] = "EMP101";
-
-console.log(employee);
+// JavaScript allows swapping types at positions freely.
+// JavaScript ஒவ்வொரு இடத்திலும் உள்ள types-ஐ எளிதாக மாற்ற அனுமதிக்கிறது.
+point[0] = "twelve";
+console.log("Corrupted Point:", point);
+// Expected Output: Corrupted Point: [ 'twelve', 80.27, 'Chennai' ]
+// எதிர்பார்க்கப்படும் வெளியீடு: Corrupted Point: [ 'twelve', 80.27, 'Chennai' ]
