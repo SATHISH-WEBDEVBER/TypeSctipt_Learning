@@ -18,7 +18,7 @@ Imagine driving a car where the fuel tank accepts water instead of petrol withou
 
 ## JavaScript Example
 
-```javascript
+```JavaScript
 // A variable acts like a box that can store any type of value.
 // ஒரு variable எந்த வகையான மதிப்பையும் சேமிக்கக்கூடிய ஒரு பெட்டி போன்றது.
 var age = 25;
@@ -134,12 +134,12 @@ TypeScript ஒரு சரிபார்ப்பு மாதிரியா�
 
 ## JavaScript vs TypeScript
 
-| Feature | JavaScript | TypeScript |
-| ------- | ---------- | ---------- |
-| Analogy | Unlabeled boxes that accept anything | Labeled boxes that strictly enforce contents |
-| Error Catching | Mismatched inputs cause errors at runtime | Mismatched inputs are caught at compile time |
-| Function Inputs | Open input slots (accepts any value type) | Restricted input slots (only accepts declared types) |
-| Object Layout | Freeform objects (allows typos and missing keys) | Enforced layout templates (prevents typos and missing keys) |
+| Feature         | JavaScript                                       | TypeScript                                                  |
+| --------------- | ------------------------------------------------ | ----------------------------------------------------------- |
+| Analogy         | Unlabeled boxes that accept anything             | Labeled boxes that strictly enforce contents                |
+| Error Catching  | Mismatched inputs cause errors at runtime        | Mismatched inputs are caught at compile time                |
+| Function Inputs | Open input slots (accepts any value type)        | Restricted input slots (only accepts declared types)        |
+| Object Layout   | Freeform objects (allows typos and missing keys) | Enforced layout templates (prevents typos and missing keys) |
 
 ---
 
@@ -153,12 +153,12 @@ Think of a theater ticketing system where the ticket price must be a number (e.g
 
 ## Advantages | நன்மைகள்
 
-| Benefit | Description |
-| ------- | ----------- |
-| Prevention Over Cure | Prevents datatypes mistakes from reaching production. |
-| Predictable Code | Ensures variables and functions always hold and return expected values. |
-| Auto-Complete Guidance | Helps the editor show exactly what keys and methods are available. |
-| Typos Protection | Immediately flags misspelled property names. |
+| Benefit                | Description                                                             |
+| ---------------------- | ----------------------------------------------------------------------- |
+| Prevention Over Cure   | Prevents datatypes mistakes from reaching production.                   |
+| Predictable Code       | Ensures variables and functions always hold and return expected values. |
+| Auto-Complete Guidance | Helps the editor show exactly what keys and methods are available.      |
+| Typos Protection       | Immediately flags misspelled property names.                            |
 
 ---
 
