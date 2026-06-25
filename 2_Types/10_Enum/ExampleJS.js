@@ -1,16 +1,24 @@
-// Enum Example - JavaScript
-
-// JavaScript does not support enums.
-// JavaScript-ல் enum என்ற feature இல்லை.
-
-// Creating status values manually.
-// status values கைமுறையாக உருவாக்கப்படுகின்றன.
-var status = {
-  PENDING: "PENDING",
-  APPROVED: "APPROVED",
-  REJECTED: "REJECTED"
+// In JavaScript, enums do not exist, so we use plain objects.
+// JavaScript-ல் enums இல்லை, எனவே நாம் சாதாரண objects-ஐப் பயன்படுத்துகிறோம்.
+var Direction = {
+    NORTH: "NORTH",
+    SOUTH: "SOUTH",
+    EAST: "EAST",
+    WEST: "WEST"
 };
 
-// Display the status object.
-// status object-ஐ காட்டுகிறது.
-console.log(status);
+function move(direction) {
+    console.log("Moving direction:", direction);
+}
+
+// Passing a valid direction works.
+// சரியான திசையை அனுப்பும்போது செயல்படுகிறது.
+move(Direction.NORTH);
+// Expected Output: Moving direction: NORTH
+// எதிர்பார்க்கப்படும் வெளியீடு: Moving direction: NORTH
+
+// JavaScript allows passing arbitrary strings, causing silent logic bugs.
+// JavaScript எதேச்சையான உரை மதிப்புகளையும் அனுமதிப்பதால் மறைமுகமான தர்க்கப் பிழைகள் ஏற்படுகின்றன.
+move("UP-SIDE-DOWN");
+// Expected Output: Moving direction: UP-SIDE-DOWN
+// எதிர்பார்க்கப்படும் வெளியீடு: Moving direction: UP-SIDE-DOWN

@@ -1,17 +1,21 @@
-// Number Type Example - JavaScript
+// A variable acts like a calculator memory slot that can store any type.
+// ஒரு variable எந்த வகையையும் சேமிக்கக்கூடிய கால்குலேட்டர் மெமரி ஸ்லாட் போன்றது.
+var price = 100;
+console.log("Price:", price);
+// Expected Output: Price: 100
+// எதிர்பார்க்கப்படும் வெளியீடு: Price: 100
 
-// Creating a variable and storing a numeric value.
-// ஒரு variable-ல் numeric value சேமிக்கப்படுகிறது.
-var age = 25;
+// JavaScript allows putting a string value into a number variable.
+// JavaScript ஒரு number variable-ல் string மதிப்பை வைக்க அனுமதிக்கிறது.
+price = "one hundred";
+console.log("Updated Price:", price);
+// Expected Output: Updated Price: one hundred
+// எதிர்பார்க்கப்படும் வெளியீடு: Updated Price: one hundred
 
-// Display the current value.
-// தற்போதைய மதிப்பை காட்டுகிறது.
-console.log(age);
-
-// JavaScript allows changing the datatype.
-// JavaScript-ல் datatype-ஐ மாற்ற அனுமதி உள்ளது.
-age = "Twenty Five";
-
-// Display the updated value.
-// மாற்றப்பட்ட மதிப்பை காட்டுகிறது.
-console.log(age);
+// Performing math calculations with strings causes unexpected NaN results silently.
+// உரையுடன் கணிதக் கணக்கீடுகளைச் செய்யும்போது மறைமுகமாக NaN பிழை முடிவு கிடைக்கிறது.
+var quantity = 5;
+var total = price * quantity;
+console.log("Total:", total);
+// Expected Output: Total: NaN
+// எதிர்பார்க்கப்படும் வெளியீடு: Total: NaN

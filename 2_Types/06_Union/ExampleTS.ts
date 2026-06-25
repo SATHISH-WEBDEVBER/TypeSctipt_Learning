@@ -1,23 +1,17 @@
-// Union Type Example - TypeScript
+// TypeScript uses Union types to act like a port that accepts only specified types (string or number).
+// TypeScript குறிப்பிட்ட types-ஐ (string அல்லது number) மட்டுமே ஏற்கும் வகையில் Union types-ஐப் பயன்படுத்துகிறது.
+var identifier: string | number = 101;
+console.log("Identifier:", identifier);
+// Expected Output: Identifier: 101
+// எதிர்பார்க்கப்படும் வெளியீடு: Identifier: 101
 
-// Creating a variable that accepts both number and string.
-// number அல்லது string value-ஐ ஏற்கும் variable உருவாக்கப்படுகிறது.
-let userId1: number | string = 101;
+// Changing to a string is allowed because it is in the union contract.
+// Union ஒப்பந்தத்தில் இருப்பதால் இதனை string ஆக மாற்றுவது அனுமதிக்கப்படுகிறது.
+identifier = "EMP101";
+console.log("Updated Identifier:", identifier);
+// Expected Output: Updated Identifier: EMP101
+// எதிர்பார்க்கப்படும் வெளியீடு: Updated Identifier: EMP101
 
-// Display the current value.
-// தற்போதைய மதிப்பை காட்டுகிறது.
-console.log(userId1);
-
-// Assigning a string value.
-// string value assign செய்யப்படுகிறது.
-userId1 = "EMP101";
-
-console.log(userId1);
-
-// TypeScript prevents assigning unsupported datatypes.
-// அனுமதிக்கப்படாத datatype-ஐ TypeScript தடுக்கிறது.
-
-// userId = true;
-
-// Uncommenting the above line will produce a type error.
-// மேலுள்ள வரியை uncomment செய்தால் type error வரும்.
+// Attempting to assign a boolean will cause a compile-time error.
+// boolean மதிப்பை ஒதுக்க முயற்சித்தால் கம்பைல் நேரத்தில் பிழை ஏற்படும்.
+// identifier = true;

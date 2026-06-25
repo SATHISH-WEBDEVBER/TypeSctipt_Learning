@@ -1,17 +1,22 @@
-// Enum Example - TypeScript
-
-// Creating a set of named constants.
-// பெயரிடப்பட்ட constant values உருவாக்கப்படுகின்றன.
-enum OrderStatus {
-  Pending,
-  Approved,
-  Rejected
+// Enums act like a compass providing a closed set of choices.
+// Enums என்பது வரையறுக்கப்பட்ட விருப்பங்களை வழங்கும் திசைகாட்டி போன்றது.
+enum Direction {
+    North = "NORTH",
+    South = "SOUTH",
+    East = "EAST",
+    West = "WEST"
 }
 
-// Creating a variable using enum.
-// enum value பயன்படுத்தி variable உருவாக்கப்படுகிறது.
-let currentStatus: OrderStatus = OrderStatus.Approved;
+function move(direction: Direction) {
+    console.log("Moving direction:", direction);
+}
 
-// Display the current status.
-// தற்போதைய status-ஐ காட்டுகிறது.
-console.log(currentStatus);
+// Passing a valid enum value works as expected.
+// சரியான enum மதிப்பை அனுப்பும்போது எதிர்பார்த்தபடி செயல்படுகிறது.
+move(Direction.North);
+// Expected Output: Moving direction: NORTH
+// எதிர்பார்க்கப்படும் வெளியீடு: Moving direction: NORTH
+
+// Passing invalid strings is blocked at compile time.
+// தவறான உரை மதிப்புகளை அனுப்புவது கம்பைல் நேரத்திலேயே தடுக்கப்படும்.
+// move("UP-SIDE-DOWN");
