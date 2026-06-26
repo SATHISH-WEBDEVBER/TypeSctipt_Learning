@@ -5,6 +5,7 @@ console.log("Type of price:", typeof price);
 // Expected Output: Type of price: number
 // எதிர்பார்க்கப்படும் வெளியீடு: Type of price: number
 
+
 // JavaScript allows changing the datatype freely.
 // JavaScript அதன் வகையை எளிதாக மாற்ற அனுமதிக்கிறது.
 price = "One Hundred";
