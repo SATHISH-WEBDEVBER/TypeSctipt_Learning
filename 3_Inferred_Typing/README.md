@@ -70,7 +70,7 @@ Compilation Error: Type 'string' is not assignable to type 'number'.
 
 ### Observation
 
-TypeScript automatically infers that the variable is a `number` because it was initialized with `100`, blocking any future assignments of different datatypes.
+TypeScript automatically infers that the variable is a `number` because it was initialized with `100`, blocking any future assignments of different datatypes
 
 தொடக்க மதிப்பு `100` என்பதால், variable-ன் வகை `number` தான் என்று TypeScript தானாகவே தீர்மானித்து, பின்னர் வரும் பிற தரவு வகை ஒதுக்கீடுகளைத் தடுக்கிறது.
 
@@ -78,11 +78,11 @@ TypeScript automatically infers that the variable is a `number` because it was i
 
 ## JavaScript vs TypeScript
 
-| Feature | JavaScript | TypeScript |
-| ------- | ---------- | ---------- |
-| Type Assignment | Variable type remains dynamic and can change at any time | Type is permanently inferred and locked upon initialization |
-| Code Verbosity | Clean and minimal (no type annotations) | Clean and minimal (uses type inference to avoid annotations where possible) |
-| Safety Level | Weak (risk of silent runtime type changes) | Strong (compiler enforces the inferred type statically) |
+| Feature         | JavaScript                                               | TypeScript                                                                  |
+| --------------- | -------------------------------------------------------- | --------------------------------------------------------------------------- |
+| Type Assignment | Variable type remains dynamic and can change at any time | Type is permanently inferred and locked upon initialization                 |
+| Code Verbosity  | Clean and minimal (no type annotations)                  | Clean and minimal (uses type inference to avoid annotations where possible) |
+| Safety Level    | Weak (risk of silent runtime type changes)               | Strong (compiler enforces the inferred type statically)                     |
 
 ---
 
@@ -96,11 +96,11 @@ Imagine a barcode scanning system in a retail store. When a product is scanned, 
 
 ## Advantages | நன்மைகள்
 
-| Benefit | Description |
-| ------- | ----------- |
-| Less Boilerplate | Saves coding time by eliminating the need to write types for every variable. |
-| Automatic Protection | Provides full type safety without requiring manual type annotations. |
-| Easier Migration | Simplifies converting existing JavaScript files to TypeScript. |
+| Benefit              | Description                                                                  |
+| -------------------- | ---------------------------------------------------------------------------- |
+| Less Boilerplate     | Saves coding time by eliminating the need to write types for every variable. |
+| Automatic Protection | Provides full type safety without requiring manual type annotations.         |
+| Easier Migration     | Simplifies converting existing JavaScript files to TypeScript.               |
 
 ---
 
