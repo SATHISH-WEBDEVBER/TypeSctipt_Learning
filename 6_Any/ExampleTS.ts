@@ -1,0 +1,11 @@
+// The "any" type acts like a wildcard, telling TypeScript to skip all type validation.
+// "any" என்பது வகைச் சோதனைகளைத் தவிர்க்குமாறு கம்பைலருக்குக் கூறும் காட்டு அட்டை (wildcard) போன்றது.
+var wildcard: any = 100;
+console.log("Value:", wildcard);
+// Expected Output: Value: 100
+// எதிர்பார்க்கப்படும் வெளியீடு: Value: 100
+
+wildcard = "Hello";
+console.log("Updated Value:", wildcard);
+// Expected Output: Updated Value: Hello
+// எதிர்பார்க்கப்படும் வெளியீடு: Updated Value: Hello
