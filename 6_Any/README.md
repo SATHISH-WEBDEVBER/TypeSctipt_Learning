@@ -92,3 +92,43 @@ TypeScript does not throw compile-time errors when properties are accessed on a 
 | ------- | ---------- | ----------------------- |
 | Type Validation | Disables all validation checks implicitly | Disables all validation checks explicitly, bypassing compile safety |
 | Object Verification | Permits calling any arbitrary key, yielding `undefined` | Bypasses interface verification, permitting any key access |
+
+---
+
+## Real-World Example | நடைமுறை உதாரணம்
+
+In a codebase migration from JavaScript to TypeScript, developers use `any` as a temporary placeholder to compile legacy code without errors. Once migrated, `any` is replaced with strict interfaces or union types to restore type safety.
+
+ஒரு குறியீட்டுத் தொகுப்பை JavaScript-ல் இருந்து TypeScript-க்கு மாற்றும்போது, கம்பைல் பிழைகளைத் தற்காலிகமாகத் தவிர்க்க டெவலப்பர்கள் `any`-ஐப் பயன்படுத்துகின்றனர். குறியீடு மாற்றப்பட்டதும், `any`-க்கு பதிலாக interfaces அல்லது union types மாற்றப்பட்டு பாதுகாப்பு மீட்டெடுக்கப்படுகிறது.
+
+---
+
+## Advantages | நன்மைகள்
+
+| Benefit | Description |
+| ------- | ----------- |
+| Migration Helper | Allows legacy JavaScript code to compile in TypeScript without immediate blockages. |
+| Maximum Flexibility | Bypasses all strict checks, allowing quick prototyping. |
+
+---
+
+## Interview Question
+
+### Why is using the `any` type discouraged in TypeScript, and what is its alternative?
+
+Using `any` is discouraged because it completely disables compiler safety checks, making the code prone to silent runtime failures. The recommended alternatives are strict types, Union Types, Interfaces, or the `unknown` type, which requires type verification before use.
+
+`any` வகை TypeScript-ன் கம்பைல் பாதுகாப்புச் சோதனைகளை முற்றிலும் முடக்குவதால், ரன்டைமில் செயலி முடங்கும் அபாயம் கூடுகிறது. இதனால் இது தவிர்க்கப்பட வேண்டும். இதற்கு மாற்றாக துல்லியமான types, Union Types, Interfaces அல்லது `unknown` வகையைப் பயன்படுத்த வேண்டும்.
+
+---
+
+## Summary | சுருக்கம்
+
+* Acts as a wildcard type, disabling all compile-time checks.
+  கம்பைல் நேர வகைச் சோதனைகளைத் தவிர்க்கும் காட்டு அட்டை போல செயல்படுகிறது.
+* Allows dynamic value reassignments and unverified property calls.
+  வரம்பற்ற தரவு ஒதுக்கீடுகளையும் மற்றும் சோதிக்கப்படாத அணுகுமுறைகளையும் அனுமதிக்கிறது.
+* Useful as a temporary placeholder during JavaScript migration projects.
+  பழைய JavaScript குறியீடுகளை மாற்றும்போது தற்காலிகமாகப் பயன்படுத்தப் பயனுள்ளது.
+* Bypasses the safety features, returning to standard dynamic JavaScript rules.
+  பாதுகாப்பு வளையங்களைத் தவிர்த்து, சாதாரண JavaScript விதிகளை இயக்குகிறது.
