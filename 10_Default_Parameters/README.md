@@ -94,3 +94,44 @@ TypeScript permits functions to omit default parameters safely while strictly va
 | Type Verification | None (accepts any datatype as override value) | Strong (validates that both the default value and arguments match the type) |
 | Missing Arguments | Uses default value or returns `undefined` (if no default specified) | Uses default value safely; missing non-default parameters are blocked |
 | Syntax Style | Native since ES6 | Extends ES6 syntax with static type annotations |
+
+---
+
+## Real-World Example | நடைமுறை உதாரணம்
+
+Consider a coffee shop ordering system. When ordering a coffee, if the customer does not specify their milk choice, the system defaults to "Regular Milk". If a bug in JavaScript allowed a numeric price like `100` to be passed as the milk type, the order slip would print "Coffee with 100". TypeScript stops this at compile-time by strictly locking the milk type to a string.
+
+ஒரு காபி கடையில் ஆர்டர் செய்யும் அமைப்பை நினைத்துப் பாருங்கள். வாடிக்கையாளர் பாலைக் குறிப்பிடவில்லை எனில், அது "Regular Milk" என எடுத்துக்கொள்ளப்படும். JavaScript-ல் உள்ள பிழையால் பால் வகைக்குப் பதிலாக `100` என்ற எண் கடத்தப்பட்டால் "Coffee with 100" என அச்சிடலாம். TypeScript இதை கம்பைல் நேரத்திலேயே தடுக்கிறது.
+
+---
+
+## Advantages | நன்மைகள்
+
+| Benefit | Description |
+| ------- | ----------- |
+| Implicit Optionality | Parameters with default values are automatically optional, meaning callers do not need to pass them. |
+| Strict Type Safety | Ensures the default value itself matches the parameter's designated datatype. |
+| Code Reduction | Removes the need for writing manual fallback checks inside the function body. |
+
+---
+
+## Interview Question
+
+### Can a parameter have both a default value and be marked as optional with a question mark (?) in TypeScript?
+
+No. A parameter cannot be marked as optional with a question mark `?` and have a default value at the same time. Doing so results in a compilation error. Providing a default value already makes the parameter optional implicitly, so the `?` is redundant and prohibited.
+
+இல்லை. ஒரு அளபுருவை ஒரே நேரத்தில் விருப்ப அளபுருவாக `?` கொண்டு அறிவிக்கவும், அதே நேரம் இயல்புநிலை மதிப்பை `=` கொண்டு வழங்கவும் முடியாது. இயல்புநிலை மதிப்பை வழங்கும்போது அது தானாகவே விருப்ப அளபுருவாகிவிடுவதால் `?` குறியீடு தேவையற்றதாகிறது.
+
+---
+
+## Summary | சுருக்கம்
+
+* Automatically supplies a fallback value when arguments are omitted.
+  அளபுருக்கள் விடுபடும்போது இயல்புநிலை மதிப்பைத் தானாகவே வழங்குகிறது.
+* Implicitly marks the parameter as optional for callers.
+  அழைப்பாளர்களுக்கு அந்த அளபுருவை விருப்பத்தேர்வாக மாற்றுகிறது.
+* Enforces strict type constraints on both default values and call arguments.
+  இயல்புநிலை மற்றும் கடத்தப்படும் மதிப்புகளுக்கு வகை பாதுகாப்பை உறுதி செய்கிறது.
+* Avoids runtime runtime calculation issues like NaN or undefined.
+  ரன்டைமில் NaN அல்லது undefined போன்ற கணக்கீட்டுப் பிழைகளைத் தவிர்க்கிறது.
